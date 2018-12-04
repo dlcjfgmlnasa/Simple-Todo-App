@@ -66,6 +66,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
@@ -103,11 +104,9 @@ REST_FRAMEWORK = {
 # REST_FRAMEWORK_JWT Setting
 
 JWT_AUTH = {
+    'JWT_ALGORITHM': 'HS256',
     'JWT_VERIFY': True,
-    'JWT_VERIFY_EXPIRATION': True,
-    # 'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=300),
-    # 'JWT_ALLOW_REFRESH': False,
-    # 'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
+    'JWT_VERIFY_EXPIRATION': False,
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
 }
 

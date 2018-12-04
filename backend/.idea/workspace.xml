@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="28ffd197-9bcb-4bb6-9225-0c4de196a22c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ppt/Django를 이용한 Todo App 개발.md" beforeDir="false" afterPath="$PROJECT_DIR$/../ppt/Django를 이용한 Todo App 개발.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../requirements/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../requirements/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,22 +49,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="6189" />
+          <entry key="py" value="6434" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="6189" />
+          <entry key="Python" value="6434" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="30" />
+          <entry key="py" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="30" />
+          <entry key="Python" value="34" />
         </counts>
       </usages-collector>
     </session>
@@ -71,11 +73,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.42403904">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/todo-lists/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+                <state relative-caret-position="54">
+                  <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
                   <folding>
                     <element signature="e#23#51#0" expanded="true" />
                   </folding>
@@ -83,17 +85,17 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/todo-lists/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="108">
-                  <caret line="6" selection-start-line="6" selection-end-line="6" />
+                <state relative-caret-position="378">
+                  <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
                   <folding>
                     <element signature="e#23#67#0" expanded="true" />
-                    <marker date="1543891812622" expanded="true" signature="276:1202" ph="..." />
-                    <marker date="1543891812622" expanded="true" signature="1557:1560" ph="..." />
-                    <marker date="1543891812622" expanded="true" signature="1649:1774" ph="..." />
-                    <marker date="1543891812622" expanded="true" signature="2816:2825" ph="..." />
+                    <marker date="1543909683848" expanded="true" signature="277:1202" ph="..." />
+                    <marker date="1543909683848" expanded="true" signature="1557:1560" ph="..." />
+                    <marker date="1543909683848" expanded="true" signature="1649:1774" ph="..." />
+                    <marker date="1543909683848" expanded="true" signature="2816:2825" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -104,12 +106,33 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/backend/settings.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1152">
+                  <caret line="109" column="36" lean-forward="true" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
+                  <folding>
+                    <element signature="e#308#317#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/backend/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
-                  <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+                <state relative-caret-position="210">
+                  <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/backend/wsgi.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="288">
+                  <caret line="16" selection-start-line="16" selection-end-line="16" />
                   <folding>
-                    <element signature="e#631#663#0" expanded="true" />
+                    <element signature="e#223#232#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -118,8 +141,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/todo-lists/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
-                  <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+                <state relative-caret-position="66">
+                  <caret line="28" selection-start-line="28" selection-end-line="28" />
                   <folding>
                     <element signature="e#23#51#0" expanded="true" />
                     <marker date="1543887715273" expanded="true" signature="445:677" ph="..." />
@@ -131,8 +154,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/todo-lists/serializers.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="26" selection-start-line="26" selection-end-line="26" />
+                <state relative-caret-position="288">
+                  <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
                   <folding>
                     <element signature="e#23#61#0" expanded="true" />
                     <marker date="1543887610749" expanded="true" signature="141:277" ph="..." />
@@ -168,12 +191,12 @@
         <option value="$PROJECT_DIR$/todos/models.py" />
         <option value="$PROJECT_DIR$/todo-lists/apps.py" />
         <option value="$PROJECT_DIR$/users/models.py" />
-        <option value="$PROJECT_DIR$/backend/settings.py" />
         <option value="$PROJECT_DIR$/todo-lists/serializers.py" />
         <option value="$PROJECT_DIR$/todo-lists/models.py" />
-        <option value="$PROJECT_DIR$/backend/urls.py" />
-        <option value="$PROJECT_DIR$/todo-lists/urls.py" />
         <option value="$PROJECT_DIR$/todo-lists/views.py" />
+        <option value="$PROJECT_DIR$/backend/urls.py" />
+        <option value="$PROJECT_DIR$/backend/settings.py" />
+        <option value="$PROJECT_DIR$/todo-lists/urls.py" />
       </list>
     </option>
   </component>
@@ -278,13 +301,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12633263" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12633263" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46375266" visible="true" weight="0.42453855" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.40298507" visible="true" weight="0.42453855" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -293,7 +317,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.5362473" side_tool="true" visible="true" weight="0.42453855" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.5970149" side_tool="true" visible="true" weight="0.42453855" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -355,21 +379,20 @@
     <entry file="file://$PROJECT_DIR$/backend/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/todo-lists/serializers.py">
+    <entry file="file://$PROJECT_DIR$/backend/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="288">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
-            <element signature="e#23#61#0" expanded="true" />
-            <marker date="1543887610749" expanded="true" signature="141:277" ph="..." />
+            <element signature="e#223#232#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/todo-lists/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="66">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="e#23#51#0" expanded="true" />
             <marker date="1543887715273" expanded="true" signature="445:677" ph="..." />
@@ -377,46 +400,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/settings.py">
+    <entry file="file://$PROJECT_DIR$/todo-lists/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+        <state relative-caret-position="288">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
           <folding>
-            <element signature="e#308#317#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/todo-lists/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#23#51#0" expanded="true" />
+            <element signature="e#23#61#0" expanded="true" />
+            <marker date="1543887610749" expanded="true" signature="141:277" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        <state relative-caret-position="210">
+          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1152">
+          <caret line="109" column="36" lean-forward="true" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
           <folding>
-            <element signature="e#631#663#0" expanded="true" />
+            <element signature="e#308#317#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/todo-lists/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="378">
+          <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
           <folding>
             <element signature="e#23#67#0" expanded="true" />
-            <marker date="1543891812622" expanded="true" signature="276:1202" ph="..." />
-            <marker date="1543891812622" expanded="true" signature="1557:1560" ph="..." />
-            <marker date="1543891812622" expanded="true" signature="1649:1774" ph="..." />
-            <marker date="1543891812622" expanded="true" signature="2816:2825" ph="..." />
+            <marker date="1543909683848" expanded="true" signature="277:1202" ph="..." />
+            <marker date="1543909683848" expanded="true" signature="1557:1560" ph="..." />
+            <marker date="1543909683848" expanded="true" signature="1649:1774" ph="..." />
+            <marker date="1543909683848" expanded="true" signature="2816:2825" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todo-lists/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#23#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
