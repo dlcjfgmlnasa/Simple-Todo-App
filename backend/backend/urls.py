@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-token-auth/', obtain_jwt_token),
     path('api-token-refresh', refresh_jwt_token),
-    path('todo-lists/', include('todo-lists.urls')),
+    path('todo-lists/', include('todo-lists.urls', namespace='todo-lists')),
 ]
