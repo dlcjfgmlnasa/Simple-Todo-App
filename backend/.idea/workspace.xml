@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28ffd197-9bcb-4bb6-9225-0c4de196a22c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/settings/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/settings/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/settings/development.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/settings/production.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/wsgi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ppt/Django를 이용한 Todo App 개발.md" beforeDir="false" afterPath="$PROJECT_DIR$/../ppt/Django를 이용한 Todo App 개발.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../requirements/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../requirements/requirements.txt" afterDir="false" />
     </list>
@@ -49,35 +53,35 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="6434" />
+          <entry key="py" value="6462" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="6434" />
+          <entry key="Python" value="6462" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="34" />
+          <entry key="py" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="34" />
+          <entry key="Python" value="38" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.42403904">
+    <splitter split-orientation="horizontal" split-proportion="0.4881025">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/todo-lists/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="54">
-                  <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+                <state relative-caret-position="270">
+                  <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
                   <folding>
                     <element signature="e#23#51#0" expanded="true" />
                   </folding>
@@ -85,11 +89,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/todo-lists/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
-                  <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+                <state relative-caret-position="264">
+                  <caret line="34" selection-start-line="34" selection-end-line="91" />
                   <folding>
                     <element signature="e#23#67#0" expanded="true" />
                     <marker date="1543909683848" expanded="true" signature="277:1202" ph="..." />
@@ -101,22 +105,19 @@
               </provider>
             </entry>
           </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/backend/settings.py">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/backend/settings/base.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1152">
-                  <caret line="109" column="36" lean-forward="true" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
-                  <folding>
-                    <element signature="e#308#317#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="1620">
+                  <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
                 </state>
               </provider>
             </entry>
           </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/backend/urls.py">
               <provider selected="true" editor-type-id="text-editor">
@@ -126,11 +127,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/backend/wsgi.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="288">
-                  <caret line="16" selection-start-line="16" selection-end-line="16" />
+                  <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
                   <folding>
                     <element signature="e#223#232#0" expanded="true" />
                   </folding>
@@ -197,6 +198,10 @@
         <option value="$PROJECT_DIR$/backend/urls.py" />
         <option value="$PROJECT_DIR$/backend/settings.py" />
         <option value="$PROJECT_DIR$/todo-lists/urls.py" />
+        <option value="$PROJECT_DIR$/backend/settings/production.py" />
+        <option value="$PROJECT_DIR$/backend/wsgi.py" />
+        <option value="$PROJECT_DIR$/backend/settings/base.py" />
+        <option value="$PROJECT_DIR$/backend/settings/development.py" />
       </list>
     </option>
   </component>
@@ -234,6 +239,12 @@
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="settings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="todo-lists" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -267,9 +278,9 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="DJANGO_SETTINGS_MODULE" value="backend.settings" />
+        <env name="DJANGO_SETTINGS_MODULE" value="backend.settings.development" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\workspace\Simple-Todo-App\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -308,7 +319,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.40298507" visible="true" weight="0.42453855" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4248401" visible="true" weight="0.42453855" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -317,7 +328,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.5970149" side_tool="true" visible="true" weight="0.42453855" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.5751599" side_tool="true" visible="true" weight="0.42453855" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -379,16 +390,6 @@
     <entry file="file://$PROJECT_DIR$/backend/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#223#232#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/todo-lists/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -411,6 +412,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/todo-lists/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#23#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="52" column="36" selection-end-line="160" />
+          <folding>
+            <element signature="e#308#317#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -418,36 +439,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/settings.py">
+    <entry file="file://$PROJECT_DIR$/backend/settings/development.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="109" column="36" lean-forward="true" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
+        <state>
+          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/settings/production.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
-            <element signature="e#308#317#0" expanded="true" />
+            <element signature="e#223#232#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/settings/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/todo-lists/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+        <state relative-caret-position="264">
+          <caret line="34" selection-start-line="34" selection-end-line="91" />
           <folding>
             <element signature="e#23#67#0" expanded="true" />
             <marker date="1543909683848" expanded="true" signature="277:1202" ph="..." />
             <marker date="1543909683848" expanded="true" signature="1557:1560" ph="..." />
             <marker date="1543909683848" expanded="true" signature="1649:1774" ph="..." />
             <marker date="1543909683848" expanded="true" signature="2816:2825" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/todo-lists/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#23#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
