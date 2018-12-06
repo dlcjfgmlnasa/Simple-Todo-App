@@ -3,7 +3,9 @@
 Django를 이용한 TODO App 개발
 ===
 
-Created by Choelhui lee
+https://github.com/dlcjfgmlnasa/Simple-Todo-App
+
+Created by **Choelhui lee**
 
 ---
 <!-- page_number: true -->
@@ -169,7 +171,7 @@ SELECT * FROM users
 WHERE country="colombia" 
 ORDER BY created_date
 ```
-= 
+           = 
 ```python
 User.objects
     .filter(country="colombia")
@@ -643,6 +645,49 @@ urlpatterns = [
     # todo-lists urls 추가
     path('todo-lists/', 
     	include('todo-lists.urls', namespace='todo-lists')),
+]
+```
+
+---
+
+# Django CORS 설치
+
+## Cross-Domain
+- Cross Domain이란 서로 다른 도메인에서 Javascript로 접근하려 하거나 다름 서버에 Ajax 통신의 결과를 받는 행위
+
+## 동일 출처 정책(Cross-Domain Policy)
+- 스크립트는 자신을 포함한 문서와 다른 서버에서 불러온 문서의 내용은 읽을 수 없고 다른 서버에서 불러운 문서에는 이벤트 리스너를 등록할 수 없다. 
+- 이것은 스크립트가 사용자의 입력을 캐내어 다른 페이지로 흘려보내는 것을 막기 위함이다.(보안상의 이유)
+
+---
+
+## CORS(Cross-Origin Resource Sharing)
+- 요즘 사용되는 모던 브라우저는 자바스크립트 인터프린터가 도입됐으며 보안상의 문제를 막기위해 JS의 동일 출처 정책으로 Cross-Domain 이슈를 제한함(Cross-Domain Policy)
+- 보안상의 문제 없이 Ajax등의 통신을 하기 위해 사용되는 메커니즘이 CORS임
+- CORS 표준은 웹 브라우저가 사용하는 정보를 읽을 수 있도록 허가된 출처 집합를 서버에게 알려주도록 허용하는 HTTP 헤더를 추가함으로써 동작
+
+---
+
+## Django REST API에 CORS 적용
+- Django App에서 CORS 메커니즘을 적용하기위해 Response Header에 CORS Header를 추가
+
+```bash
+pip install django-cors-headers
+```
+
+```python
+INSTALLED_APPS = (
+    ...
+    'corsheaders',
+    ...
+)
+```
+
+```
+MIDDLEWARE = [  
+    'corsheaders.middleware.CorsMiddleware', # 만드시 최상단에
+    'django.middleware.common.CommonMiddleware',
+    ...
 ]
 ```
 
