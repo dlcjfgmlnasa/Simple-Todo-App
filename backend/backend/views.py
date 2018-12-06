@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.conf import settings
 from django.utils.encoding import python_2_unicode_compatible
 from django.views.generic import View
+import os
 
 
 @python_2_unicode_compatible
