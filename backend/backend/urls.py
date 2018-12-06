@@ -16,9 +16,11 @@ Including another URLconf
 # -*- coding:utf-8 -*-
 from django.urls import path, include
 from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
+from backend.views import ReactAppView
 
 
 urlpatterns = [
+    path('', ReactAppView.as_view()),
     path('api-token-auth/', obtain_jwt_token),
     path('api-token-refresh/', refresh_jwt_token),
     path('todo-lists/', include('todo-lists.urls', namespace='todo-lists')),
