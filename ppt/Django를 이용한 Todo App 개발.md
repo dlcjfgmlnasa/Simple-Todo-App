@@ -19,7 +19,14 @@ Created by **Choelhui lee**
 - `pyenv` 설치하거나 혹은 `sudo apt install python3-pip python3-venv`로 필요한 패키지 선택
 
 ---
-# virtualenv
+# python virtualenv
+
+![python virtualenv](https://github.com/dlcjfgmlnasa/Simple-Todo-App/blob/master/ppt/image/2.%20virtualenv%20python.PNG?raw=true)
+
+---
+
+# python virtualenv
+
 + 윈도우 사용자의 경우 `PowerShell`을 `CMD`로 변경할 것.
 	- `작업 표시줄 설정` > `시작 단추를 마우스 오른쪽[...]` > `Windows PowerShell로 바꾸기` > `끔`
 
@@ -42,6 +49,7 @@ locs@ ~/Workspace/Simple-Todo-App$ source venv/bin/activate
 ---
 
 # Django 및 필요한 라이브러리 설치
+
 - 커맨드 라인의 `(venv)`를 항상 확인할 것
 
 ```bash
@@ -86,6 +94,21 @@ Django                 2.1.3
 
 ---
 
+# Django Structure
+
+- Model : Model은 데이터 서비스를 제공
+- Tempelate : View로부터 전달된 데이터를 템플릿에 적용하여 Dynamic한 웹페이지를 만드는데 사용 `(React와 연동될껏이기 때문에 사용하지는 않음)`
+
+- View : 필요한 데이터를 모델에서 가져와서 적절히 가공하여 웹 페이지 결과를 만들도록 컨트롤하는 역할
+
+---
+
+<p align="center"> 
+  <img src="https://github.com/dlcjfgmlnasa/Simple-Todo-App/blob/master/ppt/image/3.%20Django%20Structure.PNG?raw=true">
+</p>
+
+---
+
 # Django 프로젝트 생성
 
 ```bash
@@ -107,7 +130,6 @@ Quit the server with CTRL-BREAK.
 ...
 Applying sessions.0001_initial... OK
 ```
-
 ---
 
 # Django 앱 추가
@@ -171,7 +193,9 @@ SELECT * FROM users
 WHERE country="colombia" 
 ORDER BY created_date
 ```
-           = 
+
+`아래와 같음`
+
 ```python
 User.objects
     .filter(country="colombia")
@@ -382,10 +406,12 @@ class TimeStampedModel(models.Model):
 - `abstract = True` : model이 실제로 생성되지는 않음
 ---
 
+## Category Model
+	
 ```python
 @python_2_unicode_compatible
 class Category(TimeStampedModel):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, db_column='NAME')
 
     class Meta:
         db_table = 'CATEGORY'
@@ -396,9 +422,17 @@ class Category(TimeStampedModel):
 
     def todo_count(self):
         return self.todo.count()
+
 ```
 
+- `max_length=100` : 최대 글자 100개 까지
+- `ordering` : name 의 역순서대로 정렬
+- `db_column` : Column 이름
+- `db_table` : Table 이름 
+
 ---
+
+## Todo Model
 
 ```python
 @python_2_unicode_compatible
@@ -408,8 +442,7 @@ class ToDo(TimeStampedModel):
         on_delete=models.PROTECT,
         related_name='todo',
         db_column='CATEGORY_ID',
-        null=True,
-    )
+        null=True)
     contents = models.CharField(max_length=200)
     start_time = models.DateTimeField(null=True, blank=True)
     end_time = models.DateTimeField(null=True, blank=True)
@@ -417,10 +450,31 @@ class ToDo(TimeStampedModel):
     class Meta:
         db_table = 'TODO'
         ordering = ['start_time', 'end_time']
+
+    def __str__(self):
+        return self.contents
 ```
+---
+
+```python
+category = models.ForeignKey(
+              Category,
+              on_delete=models.PROTECT,
+              related_name='todo',
+              db_column='CATEGORY_ID',
+              null=True)
+```
+- `on_delete` : 
+- `related_name` : 
+- `null=True` : DB에서 Null이 허용된다
+- `black=True` : `form.is_valud()`가 호출될 때 폼 유효성 검사
 
 ---
 # Django REST Framework 설치
+
+- **Django** 안에서 **RESTful API**를 쉽게 구축할 수 있도록 도와주는 오픈 소스 라이브러리
+
+<br>
 
 ```bash
 C:\workspace\Simple-Todo-App> venv\Scripts\activate
@@ -432,6 +486,33 @@ C:\workspace\Simple-Todo-App> venv\Scripts\activate
 (venv) $> cd requirements
 (venv) $ requirements> pip freeze > requirements.txt
 ```
+---
+
+- `backend\backend\setting.py`
+```python
+# REST_FRAMEWORK Setting
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+}
+
+# REST_FRAMEWORK_JWT Setting
+
+JWT_AUTH = {
+    'JWT_ALGORITHM': 'HS256',
+    'JWT_VERIFY': True,
+    'JWT_VERIFY_EXPIRATION': False,
+    'JWT_AUTH_HEADER_PREFIX': 'JWT',
+}
+```
+
 ---
 
 # Serializers 추가
@@ -530,14 +611,28 @@ class CategoryListView(APIView):
 ```python
 class ToDoInsertView(APIView):
     def post(self, request):
+        category = request.GET.get('category')
+        if category:
+            try:
+                category = Category.objects.get(id=category)
+            except Category.DoesNotExist:
+                return Response(
+                	status=status.HTTP_404_NOT_FOUND)
+
         serializers_cls = ToDoSerializers(data=request.data)
         if serializers_cls.is_valid():
-            serializers_cls.save()
-            return Response(serializers_cls.data, 
-            		    status=status.HTTP_200_OK)
-        return Response(serializers_cls.errors, 
-                        status=status.HTTP_400_BAD_REQUEST)
+            serializers_cls.save(category=category)
+            return Response(
+            	serializers_cls.data, 
+                status=status.HTTP_200_OK)
+        return Response(
+        	serializers_cls.errors, 
+            status=status.HTTP_400_BAD_REQUEST)
+```
 
+---
+
+```python
 class ToDoListView(APIView):
     def get(self, request):
         todo_list = ToDo.objects.all()
@@ -631,7 +726,7 @@ urlpatterns = [
 ```
 
 ---
-- `backend\urls.py`
+- `backend\backend\urls.py`
 
 ```python
 # -*- coding:utf-8 -*-
@@ -647,6 +742,9 @@ urlpatterns = [
     	include('todo-lists.urls', namespace='todo-lists')),
 ]
 ```
+---
+
+# React-Django 연동
 
 ---
 
@@ -672,8 +770,9 @@ urlpatterns = [
 - Django App에서 CORS 메커니즘을 적용하기위해 Response Header에 CORS Header를 추가
 
 ```bash
-pip install django-cors-headers
+(venv) pip install django-cors-headers
 ```
+- `backend\backend\settings.py`
 
 ```python
 INSTALLED_APPS = (
@@ -685,7 +784,7 @@ INSTALLED_APPS = (
 
 ```
 MIDDLEWARE = [  
-    'corsheaders.middleware.CorsMiddleware', # 만드시 최상단에
+    'corsheaders.middleware.CorsMiddleware', # 반드시 최상단에
     'django.middleware.common.CommonMiddleware',
     ...
 ]
@@ -693,8 +792,164 @@ MIDDLEWARE = [
 
 ---
 
-# Nginx-React-Django 연동
+# React App Build
+
+```bash
+locs@locs-ThinkStation-P910:$ cd frontend
+locs@locs-ThinkStation-P910:$ yarn install # React 페키지 설치
+locs@locs-ThinkStation-P910:$ yarn build   # React 빌드
+```
+- 아래와 같이 `build` 파일 생성
+
+```
+drwxrwxr-x   6 locs locs   4096 12월  6 17:52 ./
+drwxrwxr-x  10 locs locs   4096 12월  6 17:51 ../
+drwxrwxr-x   3 locs locs   4096 12월  6 17:52 build/
+-rw-rw-r--   1 locs locs    285 12월  6 17:51 .gitignore
+drwxrwxr-x 896 locs locs  32768 12월  6 17:52 node_modules/
+-rw-rw-r--   1 locs locs    448 12월  6 17:51 package.json
+drwxrwxr-x   2 locs locs   4096 12월  6 17:51 public/
+-rw-rw-r--   1 locs locs     64 12월  6 17:51 README.md
+drwxrwxr-x   7 locs locs   4096 12월  6 17:51 src/
+-rw-rw-r--   1 locs locs  42017 12월  6 17:51 TUTORIAL.md
+-rw-rw-r--   1 locs locs 235420 12월  6 17:51 yarn.lock
+```
 
 ---
 
-#  
+# React Page Veiw 작성
+
+- `backend/backend/views.py`
+```
+from django.http import HttpResponse
+from django.conf import settings
+from django.utils.encoding import python_2_unicode_compatible
+from django.views.generic import View
+import os
+
+
+@python_2_unicode_compatible
+class ReactAppView(View):
+    def get(self, request):
+        try:
+            with open(os.path.join(str(settings.ROOT_DIR), 
+            	'frontend', 'build', 'index.html')) as file:
+                return HttpResponse(file.read())
+        except FileNotFoundError:
+            return HttpResponse(
+                """
+                index.html not found ! build your react app!!
+                """,
+                status=501)
+```
+
+---
+
+# React URL 추가
+
+- `backend/backend/urls.py`
+
+```python
+[ ... ]
+
+from backend.views import ReactAppView
+
+urlpatterns = [
+    path('', ReactAppView.as_view()),
+    path('api-token-auth/', obtain_jwt_token),
+    path('api-token-refresh/', refresh_jwt_token),
+    [ ... ]
+]
+
+```
+
+---
+
+# React -  JS, CSS static Collecting
+
+- `cd frontend\build\`
+- `index.html` 파일과 함께 js, css 파일을 함께 들고와야됨
+```
+drwxrwxr-x 3 locs locs 4096 12월  6 17:52 ./
+drwxrwxr-x 6 locs locs 4096 12월  6 17:52 ../
+-rw-rw-r-- 1 locs locs  196 12월  6 17:52 asset-manifest.json
+-rw-rw-r-- 1 locs locs 3870 12월  6 17:52 favicon.ico
+-rw-rw-r-- 1 locs locs  548 12월  6 17:52 index.html
+-rw-rw-r-- 1 locs locs  317 12월  6 17:52 manifest.json
+-rw-rw-r-- 1 locs locs 3174 12월  6 17:52 service-worker.js
+drwxrwxr-x 4 locs locs 4096 12월  6 17:52 static/ # 중요!
+```
+
+---
+
+```bash
+locs@locs-ThinkStation-P910:$ cd backend
+locs@locs-ThinkStation-P910:$ mkdir static # static 파일 생성
+```
+- `backend/backend/settings.py`
+
+
+```python
+# static 파일 위치 추가
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
+
+# Collect JS CSS 파일 위치
+STATICFILES_DIRS = [
+    str(APPS_DIR.path('static')),
+    str(ROOT_DIR.path('frontend', 'build', 'static')),
+]
+```
+
+- `STATICFILES_DIRS` 이용하여 `REACT APP`에 필요한 JS, CSS 파일들을 들고온다
+
+---
+
+- `cd backend` 
+- `STATICFILES_DIRS` 파일 들고오기
+
+```bash
+locs@locs-ThinkStation-P910:$ python manage.py collectstatic
+
+
+location as specified in your settings:
+
+    /home/locs/Workspace/Simple-Todo-App/backend/static
+
+This will overwrite existing files!
+Are you sure you want to do this?
+
+Type 'yes' to continue, or 'no' to cancel: yes # yes 입력
+```
+
+---
+
+- 완료 후 `STATICFILES_DIRS` 주석 처리
+- `backend\backend\settings.py`
+```python
+"""
+# Collect JS CSS 파일 위치
+STATICFILES_DIRS = [
+    str(APPS_DIR.path('static')),
+    str(ROOT_DIR.path('frontend', 'build', 'static')),
+]
+"""
+```
+
+---
+
+# TODO APP 실행
+- [TODO APP URL](http://164.125.141.205:8002)
+- **성공!!**
+
+<p align="center"> 
+  <img src="https://github.com/dlcjfgmlnasa/Simple-Todo-App/blob/master/ppt/image/TODO%20APP%20%EC%8B%A4%ED%96%89%20%EA%B2%B0%EA%B3%BC.PNG?raw=true">
+</p>
+
+---
+
+<center>
+  
+
+# 감사합니다
+
+</center>
