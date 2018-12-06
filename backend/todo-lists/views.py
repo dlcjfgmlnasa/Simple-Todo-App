@@ -34,9 +34,16 @@ class CategoryListView(APIView):
 
 class ToDoInsertView(APIView):
     def post(self, request):
+        category = request.GET.get('category')
+        if category:
+            try:
+                category = Category.objects.get(id=category)
+            except Category.DoesNotExist:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+
         serializers_cls = ToDoSerializers(data=request.data)
         if serializers_cls.is_valid():
-            serializers_cls.save()
+            serializers_cls.save(category=category)
             return Response(serializers_cls.data, status=status.HTTP_200_OK)
         return Response(serializers_cls.errors, status=status.HTTP_400_BAD_REQUEST)
 
