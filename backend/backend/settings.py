@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import environ
 
-ROOT_DIR = environ.Path(__file__) - 3 
+ROOT_DIR = environ.Path(__file__) - 3
 APPS_DIR = ROOT_DIR.path('backend')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -166,6 +166,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 """
 STATICFILES_DIRS = [
