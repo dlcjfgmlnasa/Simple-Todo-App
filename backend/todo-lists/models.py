@@ -14,7 +14,7 @@ class TimeStampedModel(models.Model):
 
 @python_2_unicode_compatible
 class Category(TimeStampedModel):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, db_column='NAME')
 
     class Meta:
         db_table = 'CATEGORY'
@@ -37,9 +37,12 @@ class ToDo(TimeStampedModel):
         null=True,
     )
     contents = models.CharField(max_length=200, db_column='CONTENTS')
-    start_time = models.DateTimeField(null=True, blank=True, db_column='START_TIME')
-    end_time = models.DateTimeField(null=True, blank=True, db_column='END_TIME')
+    start_time = models.DateTimeField(null=True, db_column='START_TIME')
+    end_time = models.DateTimeField(null=True, db_column='END_TIME')
 
     class Meta:
         db_table = 'TODO'
         ordering = ['start_time', 'end_time']
+
+    def __str__(self):
+        return self.contents
