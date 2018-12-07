@@ -51,14 +51,15 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    'todo-lists',
+    'users',
+    'todo_lists',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 # Custom user app defaults
 # Select the correct user model
-# AUTH_USER_MODEL = 'User'
+AUTH_USER_MODEL = 'users.CustomUser'
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -167,11 +168,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = ROOT_DIR.path('frontend', 'build', 'static')
 
-"""
-STATICFILES_DIRS = [
-    str(APPS_DIR.path('static')),
-    str(ROOT_DIR.path('frontend', 'build', 'static')),
-]
-"""

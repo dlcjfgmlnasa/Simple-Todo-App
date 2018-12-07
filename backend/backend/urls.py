@@ -23,6 +23,6 @@ urlpatterns = [
     path('', ReactAppView.as_view()),
     path('api-token-auth/', obtain_jwt_token),
     path('api-token-refresh/', refresh_jwt_token),
-    path('todo-lists/', include('todo-lists.urls', namespace='todo-lists')),
+    path('todo-lists/', include('todo_lists.urls', namespace='todo-lists')),
 ]
 
