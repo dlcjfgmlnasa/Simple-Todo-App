@@ -478,8 +478,8 @@ category = models.ForeignKey(
 
 ```bash
 C:\workspace\Simple-Todo-App> venv\Scripts\activate
-(venv) $> pip install djangorestframewok
-(venv) $> pip install pip install djangorestframework-jwt
+(venv) $> pip install djangorestframework
+(venv) $> pip install djangorestframework-jwt
 ```
 
 ```bash
@@ -491,7 +491,6 @@ C:\workspace\Simple-Todo-App> venv\Scripts\activate
 - `backend\backend\setting.py`
 ```python
 # REST_FRAMEWORK Setting
-
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
@@ -504,7 +503,6 @@ REST_FRAMEWORK = {
 }
 
 # REST_FRAMEWORK_JWT Setting
-
 JWT_AUTH = {
     'JWT_ALGORITHM': 'HS256',
     'JWT_VERIFY': True,
