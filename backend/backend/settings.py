@@ -47,8 +47,10 @@ THIRD_PARTY_APPS = [
     'rest_framework_jwt',
 ]
 
+SITE_ID = 1
+
 LOCAL_APPS = [
-    # 'users',
+    'users',
     'todo_lists',
 ]
 
@@ -56,7 +58,8 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 # Custom user app defaults
 # Select the correct user model
-# AUTH_USER_MODEL = 'users.CustomUser'
+AUTH_USER_MODEL = 'users.CustomUser'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
