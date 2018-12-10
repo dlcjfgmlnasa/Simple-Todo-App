@@ -33,7 +33,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     username = models.CharField(unique=True, null=False, max_length=100)
     email = models.EmailField(unique=True, null=False, max_length=254)
-    phone_number = models.CharField(null=True, blank=True, max_length=11, validators=[phone_regex])
+    phone_number = models.CharField(null=True, max_length=11, validators=[phone_regex])
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -41,6 +41,9 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['email']
 
     objects = UserManager()
+
+    class Meta:
+        db_table = 'USER'
 
     def __str__(self):
         return self.username
